@@ -1,4 +1,4 @@
-![](https://cneos.jpl.nasa.gov/images/cneos_banner.png)
+![](https://media.discordapp.net/attachments/576529794414673963/1072829995023601674/Pr._rootKitty_Banner_for_a_website_that_displays_Near_Earth_Obj_933217e6-a2bd-4eb2-9ebf-ce3d2a026bdf.png?width=593&height=593)
 
 ## NEOIM Sentry
 
@@ -52,6 +52,9 @@ This API provides access to results from the CNEOS Sentry system.
 This API provides access to near-realtime results from the CNEOS Scout system. Various query modes provide access to available subsets of data. See the examples and query parameters below for details.
 
 [Link to Scout Data API documentation](https://ssd-api.jpl.nasa.gov/doc/scout.html)
+
+## MongoDB
+The dashboard is using MongoDB as a database to store the data from the API as a backup.
 
 ## Getting Started
 
