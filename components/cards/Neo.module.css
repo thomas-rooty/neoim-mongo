@@ -1,0 +1,118 @@
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #17191F;
+  min-height: 400px;
+  min-width: 550px;
+  margin: 5px 5px 0;
+}
+
+.loading {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #505050;
+  padding: 1rem;
+  background: #1f1f24;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+}
+
+.previewBtn,
+.detailsBtn {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.title > h1 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem 0;
+}
+
+.toolbarItem {
+  cursor: pointer;
+  background-color: #464c57;
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  vertical-align: center;
+}
+
+.toolbarItemTextActive {
+  color: #d6a746;
+}
+
+.toolbarItemText {
+  color: #969ba2;
+}
+
+.toolbarItem > span {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+.detailsItem {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.detailsLabel {
+  color: #999a9c;
+  margin-right: 0.15rem;
+}
+
+.detailsValue {
+  color: #df474a;
+}
+
+.image {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /*noinspection CssReplaceWithShorthandSafely*/
+  background: none;
+  /*noinspection CssReplaceWithShorthandSafely*/
+  background-image: linear-gradient(rgb(33, 33, 33) .1em, transparent .1em), linear-gradient(90deg, rgb(33, 33, 33) .1em, transparent .1em);
+  background-size: 3em 1.5em;
+}
+
+.image > div:first-child {
+  height: unset!important;
+}
+
+@media screen and (max-width: 1280px) {
+  .card {
+    min-width: 100%;
+    margin: 5px 0 0;
+  }
+
+  .details {
+    flex-direction: column;
+  }
+}
