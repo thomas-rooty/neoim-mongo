@@ -11,6 +11,7 @@ const NeoTable = () => {
   const [neosMongo, setNeosMongo] = useStore(state => [state.neosMongo, state.setNeosMongo]);
   const [hMax] = useStore(state => [state.hMax]);
   const [ps] = useStore(state => [state.ps]);
+  const [setChoosenNeo] = useStore(state => [state.setChoosenNeo]);
   useEffect(() => {
     setLoadingNEOs(true);
     const fetchData = async () => {
@@ -26,6 +27,7 @@ const NeoTable = () => {
   const handleRowClick = (e: any) => {
     // Console log the id of the row clicked
     console.log(e.target.parentNode.id);
+    setChoosenNeo(e.target.parentNode.id);
   }
 
   if (loadingNEOs) {
