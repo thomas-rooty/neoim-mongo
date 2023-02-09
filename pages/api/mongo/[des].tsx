@@ -2,19 +2,18 @@ import type {NextApiRequest, NextApiResponse} from 'next'
 import clientPromise from "../../../lib/mongodb";
 
 type Data = {
-  neos: any[]
+  neo: any[]
 }
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  // Catch all route to get every filters
   const {
-    query: {param},
+    query: {des},
   } = req
 
-  if (param) {
+  if (des) {
     // Query the mongo database
     try {
       // Connect to the MongoDB database
@@ -22,18 +21,16 @@ export default async function handler(
       const db = await client.db("neoim-sentry");
 
       // Query the database
-      // param[0] = h-max
-      // param[1] = ps-min
-      const neos = await db
+      // des = 2020 QG for example
+      const neo = await db
         .collection("neos")
         .find({
-          h: {$lte: parseFloat(param[0])},
-          ps_max: {$gte: parseFloat(param[1])}
+          des: des
         })
         .toArray();
 
       // Return the data, handle errors
-      res.status(200).json({neos})
+      res.status(200).json({neo})
     } catch (error) {
       console.log(error)
     }

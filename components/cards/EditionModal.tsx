@@ -11,9 +11,10 @@ const EditionModal = () => {
   useEffect(() => {
     setLoadingNEO(true);
     const fetchData = async () => {
-      const res = await fetch('/api/neo/' + choosenNeo);
+      const res = await fetch('/api/mongo/' + choosenNeo);
       const data = await res.json();
-      setNeo(data.neo);
+      setNeo(data.neo[0]);
+      console.log(data.neo);
       setLoadingNEO(false);
     };
     fetchData();
@@ -52,15 +53,15 @@ const EditionModal = () => {
                       <h3>Neo Designation</h3>
                     </div>
                     <div className={styles.modalBodyContentLeftContentItemValue}>
-                      <p>{neo['summary']['des']}</p>
+                      <p>{neo.des}</p>
                     </div>
                   </div>
                   <div className={styles.modalBodyContentLeftContentItem}>
                     <div className={styles.modalBodyContentLeftContentItemTitle}>
-                      <h3>First seen</h3>
+                      <h3>Range</h3>
                     </div>
                     <div className={styles.modalBodyContentLeftContentItemValue}>
-                      <p>{neo['summary']['first_obs']}</p>
+                      <p>{neo.range}</p>
                     </div>
                   </div>
                   <div className={styles.modalBodyContentLeftContentItem}>
@@ -68,7 +69,7 @@ const EditionModal = () => {
                       <h3>Last seen</h3>
                     </div>
                     <div className={styles.modalBodyContentLeftContentItemValue}>
-                      <p>{neo['summary']['last_obs']}</p>
+                      <p>{neo.last_obs}</p>
                     </div>
                   </div>
                   <div className={styles.modalBodyContentLeftContentItem}>
@@ -76,7 +77,7 @@ const EditionModal = () => {
                       <h3>Impact Probability</h3>
                     </div>
                     <div className={styles.modalBodyContentLeftContentItemValue}>
-                      <p>{neo['summary']['ip']}</p>
+                      <p>{neo.ip}</p>
                     </div>
                   </div>
                 </div>
