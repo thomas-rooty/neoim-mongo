@@ -1,6 +1,6 @@
 'use client';
 import styles from './NeoTable.module.css';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useStore} from "../../store/zustore";
 
 const NeoTable = () => {
@@ -13,6 +13,8 @@ const NeoTable = () => {
   const [ps] = useStore(state => [state.ps]);
   const [ipMin] = useStore(state => [state.ipMin]);
   const [setChoosenNeo] = useStore(state => [state.setChoosenNeo]);
+  const [sortDirection, setSortDirection] = useState('asc');
+  
   useEffect(() => {
     setLoadingNEOs(true);
     const fetchData = async () => {
@@ -31,6 +33,18 @@ const NeoTable = () => {
     setChoosenNeo(e.target.parentNode.id);
   }
 
+  const sortData = (key: any) => {
+    setNeosMongo([...neosMongo].sort((a, b) => {
+      if (sortDirection === 'asc') {
+        return a[key] > b[key] ? 1 : -1;
+      } else {
+        return b[key] > a[key] ? 1 : -1;
+      }
+    }));
+  
+    setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+  };
+
   if (loadingNEOs) {
     return (
       <div className={styles.card}>
@@ -43,15 +57,15 @@ const NeoTable = () => {
         <table className={styles.table}>
           <thead>
           <tr>
-            <th>Designation</th>
-            <th>Year Range</th>
-            <th>Potential Impacts</th>
-            <th>Impact Probability</th>
-            <th>Velocity (km/s)</th>
-            <th>H (mag)</th>
-            <th>Diameter (km)</th>
-            <th>Palermo Scale (cum.)</th>
-            <th>Palermo Scale (max.)</th>
+            <th onClick={() => sortData('des')}>Designation</th>
+            <th onClick={() => sortData('range')}>Year Range</th>
+            <th onClick={() => sortData('n_imp')}>Potential Impacts</th>
+            <th onClick={() => sortData('ip')}>Impact Probability</th>
+            <th onClick={() => sortData('v_inf')}>Velocity (km/s)</th>
+            <th onClick={() => sortData('h')}>H (mag)</th>
+            <th onClick={() => sortData('diameter')}>Diameter (km)</th>
+            <th onClick={() => sortData('ps_cum')}>Palermo Scale (cum.)</th>
+            <th onClick={() => sortData('ps_max')}>Palermo Scale (max.)</th>
           </tr>
           </thead>
           <tbody>
