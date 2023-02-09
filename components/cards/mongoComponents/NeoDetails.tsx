@@ -39,7 +39,7 @@ const NeoDetails = () => {
       <div className={styles.modal}>
         <div className={styles.modalContent}>
           <div className={styles.modalHeader}>
-            <h1>Near Earth Object Details</h1>
+            <h1>Near Earth Object Details ℹ️</h1>
           </div>
           <div className={styles.modalBody}>
             <div className={styles.modalBodyContentLeftContentItem}>
@@ -52,7 +52,7 @@ const NeoDetails = () => {
             </div>
             <div className={styles.modalBodyContentLeftContentItem}>
               <div className={styles.modalBodyContentLeftContentItemTitle}>
-                <h3>Range</h3>
+                <h3>Impact Range</h3>
               </div>
               <div className={styles.modalBodyContentLeftContentItemValue}>
                 <p>{neo.range}</p>
@@ -72,6 +72,40 @@ const NeoDetails = () => {
               </div>
               <div className={styles.modalBodyContentLeftContentItemValue}>
                 <p>{neo.ip}</p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.modalBody}>
+            <div className={styles.modalBodyContentLeftContentItem}>
+              <div className={styles.modalBodyContentLeftContentItemTitle}>
+                <h3>Diameter</h3>
+              </div>
+              <div className={styles.modalBodyContentLeftContentItemValue}>
+                <p>{neo.diameter} km</p>
+              </div>
+            </div>
+            <div className={styles.modalBodyContentLeftContentItem}>
+              <div className={styles.modalBodyContentLeftContentItemTitle}>
+                <h3>Velocity</h3>
+              </div>
+              <div className={styles.modalBodyContentLeftContentItemValue}>
+                <p>~ {Math.floor(neo.v_inf)} km/s</p>
+              </div>
+            </div>
+            <div className={styles.modalBodyContentLeftContentItem}>
+              <div className={styles.modalBodyContentLeftContentItemTitle}>
+                <h3>Magnitude</h3>
+              </div>
+              <div className={styles.modalBodyContentLeftContentItemValue}>
+                <p>{neo.h}</p>
+              </div>
+            </div>
+            <div className={styles.modalBodyContentLeftContentItem}>
+              <div className={styles.modalBodyContentLeftContentItemTitle}>
+                <h3>ID</h3>
+              </div>
+              <div className={styles.modalBodyContentLeftContentItemValue}>
+                <p>{neo.id}</p>
               </div>
             </div>
           </div>
