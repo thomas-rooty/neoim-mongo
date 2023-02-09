@@ -14,13 +14,12 @@ const NeoTable = () => {
   const [ipMin] = useStore(state => [state.ipMin]);
   const [setChoosenNeo] = useStore(state => [state.setChoosenNeo]);
   const [sortDirection, setSortDirection] = useState('asc');
-  
+
   useEffect(() => {
     setLoadingNEOs(true);
     const fetchData = async () => {
       const res = await fetch('/api/mongo/' + hMax + '/' + ps + '/' + ipMin);
       const data = await res.json();
-      console.log(data);
       setNeosMongo(data.neos);
       setLoadingNEOs(false);
     };
@@ -28,11 +27,10 @@ const NeoTable = () => {
   }, [hMax, ps, ipMin]);
 
   const handleRowClick = (e: any) => {
-    // Console log the id of the row clicked
-    console.log(e.target.parentNode.id);
     setChoosenNeo(e.target.parentNode.id);
   }
 
+  // Sort data in table by clicking on the header
   const sortData = (key: any) => {
     setNeosMongo([...neosMongo].sort((a, b) => {
       if (sortDirection === 'asc') {
@@ -41,7 +39,7 @@ const NeoTable = () => {
         return b[key] > a[key] ? 1 : -1;
       }
     }));
-  
+
     setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
   };
 
