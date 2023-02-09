@@ -39,7 +39,7 @@ const NeoDetails = () => {
       <div className={styles.modal}>
         <div className={styles.modalContent}>
           <div className={styles.modalHeader}>
-            <h1>Most Dangerous NEO reported to date</h1>
+            <h1>Near Earth Object Details</h1>
           </div>
           <div className={styles.modalBody}>
             <div className={styles.modalBodyContentLeftContentItem}>
