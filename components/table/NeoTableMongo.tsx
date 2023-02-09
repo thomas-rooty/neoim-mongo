@@ -11,18 +11,19 @@ const NeoTable = () => {
   const [neosMongo, setNeosMongo] = useStore(state => [state.neosMongo, state.setNeosMongo]);
   const [hMax] = useStore(state => [state.hMax]);
   const [ps] = useStore(state => [state.ps]);
+  const [ipMin] = useStore(state => [state.ipMin]);
   const [setChoosenNeo] = useStore(state => [state.setChoosenNeo]);
   useEffect(() => {
     setLoadingNEOs(true);
     const fetchData = async () => {
-      const res = await fetch('/api/mongo/' + hMax + '/' + ps);
+      const res = await fetch('/api/mongo/' + hMax + '/' + ps + '/' + ipMin);
       const data = await res.json();
       console.log(data);
       setNeosMongo(data.neos);
       setLoadingNEOs(false);
     };
     fetchData();
-  }, [hMax, ps]);
+  }, [hMax, ps, ipMin]);
 
   const handleRowClick = (e: any) => {
     // Console log the id of the row clicked

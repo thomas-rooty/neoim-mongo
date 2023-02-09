@@ -24,11 +24,13 @@ export default async function handler(
       // Query the database
       // param[0] = h-max
       // param[1] = ps-min
+      // param[2] = ip-min
       const neos = await db
         .collection("neos")
         .find({
           h: {$lte: parseFloat(param[0])},
-          ps_max: {$gte: parseFloat(param[1])}
+          ps_max: {$gte: parseFloat(param[1])},
+          ip: {$gte: parseFloat(param[2])}
         })
         .toArray();
 

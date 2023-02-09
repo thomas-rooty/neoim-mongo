@@ -6,10 +6,12 @@ import NeoTableMongo from "../table/NeoTableMongo";
 const List = () => {
   const [hMax, setHMax] = useStore(state => [state.hMax, state.setHMax]);
   const [ps, setPs] = useStore(state => [state.ps, state.setPs]);
+  const [ipMin, setIpMin] = useStore(state => [state.ipMin, state.setIpMin]);
 
   const resetToDefaults = () => {
     setHMax('99');
     setPs('-4');
+    setIpMin('1e-6');
   }
   return (
     <div className={styles.card}>
@@ -22,6 +24,15 @@ const List = () => {
             </div>
           </div>
           <div className={styles.settingsContainer}>
+            <div className={styles.settingsItem}>
+              <select name="ip" id="ip" value={ipMin} onChange={e => setIpMin(e.target.value)}>
+                <option value="1e-10">Any Impact Probability</option>
+                <option value="1e-1">1e-1</option>
+                <option value="1e-2">1e-2</option>
+                <option value="1e-4">1e-4</option>
+                <option value="1e-6">1e-6</option>
+              </select>
+            </div>
             <div className={styles.settingsItem}>
               <select name="ps" id="ps" value={ps} onChange={(e) => setPs(e.target.value)}>
                 <option value="-10">Any Palermo scale</option>
