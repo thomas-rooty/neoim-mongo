@@ -55,15 +55,15 @@ const NeoTable = () => {
         <table className={styles.table}>
           <thead>
           <tr>
-            <th onClick={() => sortData('des')}>Designation</th>
-            <th onClick={() => sortData('range')}>Year Range</th>
-            <th onClick={() => sortData('n_imp')}>Potential Impacts</th>
-            <th onClick={() => sortData('ip')}>Impact Probability</th>
-            <th onClick={() => sortData('v_inf')}>Velocity (km/s)</th>
-            <th onClick={() => sortData('h')}>H (mag)</th>
-            <th onClick={() => sortData('diameter')}>Diameter (km)</th>
-            <th onClick={() => sortData('ps_cum')}>Palermo Scale (cum.)</th>
-            <th onClick={() => sortData('ps_max')}>Palermo Scale (max.)</th>
+            <th>Designation</th>
+            <th>Year Range</th>
+            <th onClick={() => sortData('n_imp')}>Potential Impacts ⇅</th>
+            <th onClick={() => sortData('ip')}>Impact Probability ⇅</th>
+            <th onClick={() => sortData('v_inf')}>Velocity (km/s) ⇅</th>
+            <th onClick={() => sortData('h')}>H (mag) ⇅</th>
+            <th onClick={() => sortData('diameter')}>Diameter (km) ⇅</th>
+            <th onClick={() => sortData('ps_cum')}>Palermo Scale (cum.) ⇅</th>
+            <th onClick={() => sortData('ps_max')}>Palermo Scale (max.) ⇅</th>
           </tr>
           </thead>
           <tbody>
