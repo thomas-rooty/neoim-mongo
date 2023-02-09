@@ -31,7 +31,6 @@
   cursor: pointer;
 }
 
-
 /* Cell in a row */
 .table > tbody > tr > td {
   color: #d5d5d5;
