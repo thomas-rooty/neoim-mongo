@@ -49,7 +49,6 @@ const NeoTable = () => {
             <th>Diameter (km)</th>
             <th>Palermo Scale (cum.)</th>
             <th>Palermo Scale (max.)</th>
-            <th>Torino Scale (max.)</th>
           </tr>
           </thead>
           <tbody>
@@ -64,7 +63,6 @@ const NeoTable = () => {
               <td>{neo.diameter}</td>
               <td>{neo.ps_cum}</td>
               <td>{neo.ps_max}</td>
-              <td>{neo.ts_max}</td>
             </tr>
           ))}
           </tbody>
