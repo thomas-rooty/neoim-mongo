@@ -1,6 +1,6 @@
 'use client';
 import styles from './NeoDetails.module.css'
-import {useStore} from "../../store/zustore";
+import {useStore} from "../../../store/zustore";
 import {useEffect} from "react";
 
 const NeoDetails = () => {

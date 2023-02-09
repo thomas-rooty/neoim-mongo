@@ -1,7 +1,7 @@
 import styles from '../page.module.css'
 import Navbar from '../../components/navbar/Navbar'
-import ListMongo from "../../components/cards/ListMongo";
-import NeoDetails from "../../components/cards/NeoDetails";
+import ListMongo from "../../components/cards/mongoComponents/ListMongo";
+import NeoDetails from "../../components/cards/mongoComponents/NeoDetails";
 
 export default function Home() {
   return (

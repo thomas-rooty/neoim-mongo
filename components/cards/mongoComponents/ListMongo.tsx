@@ -1,7 +1,7 @@
 'use client';
-import styles from './List.module.css'
-import {useStore} from "../../store/zustore";
-import NeoTableMongo from "../table/NeoTableMongo";
+import styles from '../List.module.css'
+import {useStore} from "../../../store/zustore";
+import NeoTableMongo from "../../table/NeoTableMongo";
 
 const List = () => {
   const [hMax, setHMax] = useStore(state => [state.hMax, state.setHMax]);
