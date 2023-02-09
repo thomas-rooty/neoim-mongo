@@ -1,7 +1,7 @@
 import styles from '../page.module.css'
 import Navbar from '../../components/navbar/Navbar'
 import ListMongo from "../../components/cards/ListMongo";
-import EditionModal from "../../components/cards/EditionModal";
+import NeoDetails from "../../components/cards/NeoDetails";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar/>
         <ListMongo/>
-        <EditionModal/>
+        <NeoDetails/>
       </main>
     </div>
   )
