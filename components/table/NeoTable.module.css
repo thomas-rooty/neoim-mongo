@@ -20,9 +20,9 @@
 
 /* Header table */
 .table > thead > tr > th {
-  color: #f1f1f1;
+  color: #fff;
   background-color: #17191f;
-  font-weight: 800;
+  font-weight: 300;
   padding: 8px 16px;
   text-align: left;
   position: sticky;
@@ -38,7 +38,7 @@
 
 /* Cell in a row */
 .table > tbody > tr > td {
-  color: #d5d5d5;
+  color: #bebebe;
   padding: 4px 16px;
   text-align: left;
   font-weight: 300;
@@ -49,6 +49,11 @@
 
 .table > tbody > tr > td:first-child {
   border-left: 2px solid #24AF65;
+}
+
+/* When hovering a row, I want all the cells of the row to be highlighted */
+.table > tbody > tr:hover > td {
+  background-color: #1f1f24;
 }
 
 @media screen and (max-width: 1280px) {
