@@ -10,6 +10,11 @@
   flex-direction: row;
 }
 
+.bottomCards {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 1280px) {
   .main {
     padding: 5px;

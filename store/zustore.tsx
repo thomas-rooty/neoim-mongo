@@ -19,6 +19,8 @@ interface IStore {
   setPs: (ps: string) => void;
   ipMin: string;
   setIpMin: (ipMin: string) => void;
+  mDangerous: any;
+  setMDangerous: (mDangerous: string[]) => void;
 }
 
 export const useStore = create<IStore>((set) => ({
@@ -40,4 +42,6 @@ export const useStore = create<IStore>((set) => ({
   setPs: (ps) => set({ ps }),
   ipMin: '1e-6',
   setIpMin: (ipMin) => set({ ipMin }),
+  mDangerous: [],
+  setMDangerous: (mDangerous) => set({ mDangerous }),
 }));
