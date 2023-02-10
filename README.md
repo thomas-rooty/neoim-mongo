@@ -24,11 +24,17 @@ The dashboard is using MongoDB as a database to store the data from the API as a
 The Python API is available at the root of the project named `api-python.py`
 
 
-## Getting Started
+## Lancement du projet
 
-Set the envinronment variable in the .env.local file in the root of the project.
+Creer un fichier .env.local et y renseigner les variables d'environnement requises.
 
-Then, run the development server:
+Lancer le fichier Python 'api-python.py' pour récupérer les données de l'API et les stocker dans la base de données MongoDB.
+
+```bash
+flask --app api-python.py run
+```
+
+Finalement, lancer le projet NextJS
 
 ```bash
 npm run dev
@@ -36,9 +42,9 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Se rendre sur [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
+[API routes](https://nextjs.org/docs/api-routes/introduction) peuvent être utilisées pour créer des API.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated
 as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
